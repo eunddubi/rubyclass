@@ -7,11 +7,19 @@ require 'csv'
 require 'date'
 require 'uri'
 
+before do
+  p "***********************"
+  p params
+  p "***********************"
+end
+
 get '/' do
   erb :index
 end
 
 get '/welcome/:name' do
+  # views/welcome.erb @p를 찍어서 디버깅
+  @p = params.inspect
   @name = params[:name]
   @time = Time.now.to_s
   CSV.open('user.csv', 'a+') do |data|
