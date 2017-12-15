@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Edit</title>
+</head>
+<body>
+  <h2>글 수정하기</h2>
+  <form action="/update/<%= @post.id%>">
+    제목: <input type="text" name="title" value="<%= @post.title %>"/><br />
+    내용: <textarea name="content"><%= @post.content%></textarea><br />
+    <input type="submit" value="완료" />
+  </form><br />
+  <a href="/">HOME</a>
+</body>
+</html>
