@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8" />
+  <title>NEW</title>
+</head>
+<board>
+  <h1>게시글을 수정해보세요!</h1>
+  <form action="/post/update/<%= @post.id %>">
+    <p>작성자: <input type="text" name="username" value="<%= @post.username %>" />
+      제  목: <input type="text" name="title" value="<%= @post.title %>"/></p><br />
+    <p><textarea name="content" ><%= @post.content %></textarea></p><br/>
+    <input type="submit" value="DONE" />
+  </form>
+  <a href="/">HOME</a>
+</board>

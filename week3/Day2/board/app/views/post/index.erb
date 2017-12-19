@@ -1,0 +1,33 @@
+
+<h1>WELCOME!</h1>
+<h2>점점 발전해나가는 블로그</h2>
+<a class="btn btn-primary" href="/post/new" role="button">글쓰기</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Time</th>
+      <th scope="col">Show</th>
+      <th scope="col">Modify</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <th scope="row"><%= post.id%></th>
+      <td><%= post.username%></td>
+      <td><%= post.title%></td>
+      <td><%= post.content%></td>
+      <td><%= post.created_at%></td>
+      <td><a href="/post/show/<%= post.id %>">More</a></td>
+      <td><a href="/post/edit/<%= post.id %>">Edit</a></td>
+      <td><a href="/post/destroy/<%= post.id %>">X</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
