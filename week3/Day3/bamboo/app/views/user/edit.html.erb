@@ -1,0 +1,17 @@
+<form action="/user/update/<%= @bamboo.id %>">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">작성자</label>
+    <input type="text" name="username" value = "<%= @bamboo.username%>"class="form-control" id="exampleFormControlInput1" >
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">제 목</label>
+    <input type="text" name="title" value = "<%= @bamboo.title%>" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력하세요.">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">내 용</label>
+    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"><%= @bamboo.content%></textarea>
+  </div>
+  <div class="container" style="padding-top: 30px">
+    <button class="btn btn-outline-success" type="submit">SUBMIT</button>
+  </div>
+</form>

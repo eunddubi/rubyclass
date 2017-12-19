@@ -1,0 +1,32 @@
+<div class="alert alert-success" role="alert">
+  <h3 class="alert-heading">MULTICAMPUS BAMBOO FOREST</h3>
+  <hr />
+  <p>멀티캠퍼스 대나무숲입니다. 당신의 비밀을 털어놓으세요.</p>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Show</th>
+      <th scope="col">Modify</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bamboo.each do |bb| %>
+    <tr>
+      <th scope="row"><%= bb.id%></th>
+      <td><%= bb.username%></td>
+      <td><%= bb.title%></td>
+      <td><%= bb.content%></td>
+      <td><a href="/user/show/<%= bb.id %>">More</a></td>
+      <td><a href="/user/edit/<%= bb.id %>">Edit</a></td>
+      <td><a href="/user/destroy/<%= bb.id%>">X</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
