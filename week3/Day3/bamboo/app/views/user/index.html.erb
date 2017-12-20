@@ -25,7 +25,7 @@
       <td><%= bb.content%></td>
       <td><a href="/user/show/<%= bb.id %>">More</a></td>
       <td><a href="/user/edit/<%= bb.id %>">Edit</a></td>
-      <td><a href="/user/destroy/<%= bb.id%>">X</a></td>
+      <td><a data-method="delete" data-confirm="정말로 삭제하시겠습니까?" href="/user/destroy/<%= bb.id%>">X</a></td>
     </tr>
     <% end %>
   </tbody>

@@ -4,3 +4,16 @@
   <hr>
   <p class="mb-0"><%= @bamboo.content%></p>
 </div>
+
+<hr />
+<h4>댓글을 입력해보세요!</h4>
+<form action="/user/add_comment">
+  <input type="text" name="content" placeholder="댓글을 입력해주세요."/>
+  <input type="hidden" name="id" value="<%= @bamboo.id %>" />
+  <input type="submit" value="완료" />
+</form>
+
+<hr />
+<% @bamboo.comments.reverse.each_with_index do |c,i| %>
+<p><<%=@bamboo.comments.length - i%>> <%= c.content %> / <%= c.created_at %> </p><br />
+<%end%>

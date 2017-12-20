@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219082400) do
+ActiveRecord::Schema.define(version: 20171220041315) do
 
   create_table "bamboolists", force: :cascade do |t|
     t.string   "username"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20171219082400) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "bamboolist_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
