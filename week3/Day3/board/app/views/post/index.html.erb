@@ -1,2 +1,29 @@
-<h1>Post#index</h1>
-<p>Find me in app/views/post/index.html.erb</p>
+<h3>멀티캠퍼스 대나무숲에 오신 것을 환영합니다!</h3><br />
+<p>대나무 숲에 올라와 있는 글들을 확인하세요!</p><br/><br/>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">작성자</th>
+      <th scope="col">제 목</th>
+      <th scope="col">내 용</th>
+      <th scope="col">시 간</th>
+      <th scope="col">수 정</th>
+      <th scope="col">삭 제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <th scope="row"><%= post.id %></th>
+      <td><%= post.username %></td>
+      <td><a href="/post/show/<%= post.id %>"><%= post.title %></a></td>
+      <td><%= post.content %></td>
+      <td><%= post.created_at %></td>
+      <td><a href="/post/edit/<%= post.id %>"><i class="fas fa-pencil-alt"></i></a></td>
+      <td><a href="/post/destroy/<%= post.id %>"><i class="fas fa-cut"></i></a></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
