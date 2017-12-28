@@ -1,0 +1,20 @@
+<h3>게시글을 수정해보세요!</h3><br />
+
+<form action="/post/update/<%= @post.id%>">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">작성자</label>
+    <input type="text" name="username" class="form-control" id="exampleFormControlInput1" value="<%= @post.username %>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">제목</label>
+    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="<%= @post.title %>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">내용</label>
+    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"><%= @post.content %></textarea>
+  </div>
+  <div class="form-group" float="right">
+    <button type="submit" class="btn btn-primary btn-sm">제출</button>
+    <a href="/"><button type="button" class="btn btn-primary btn-sm">취소</button></a>
+  </div>
+</form>
